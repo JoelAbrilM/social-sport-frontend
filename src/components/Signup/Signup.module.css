@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+:root {
+    --dark-bg: #0e0e0e;
+    --card-bg: #1e1e1e;
+    --turquoise: #1abc9c;
+    --gray: #7f8c8d;
+    --white: #ecf0f1;
+    --light-gray: #2c3e50;
+    --black: #000;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--white);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.field label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--gray);
+}
+
+.field input,
+.field select {
+    padding: 0.6rem;
+    border: 1px solid #444;
+    border-radius: 6px;
+    background-color: #121212;
+    color: var(--white);
+    transition: border-color 0.3s ease;
+}
+
+.field input:focus,
+.field select:focus {
+    border-color: var(--turquoise);
+    outline: none;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
+    background-color: var(--dark-bg);
+}
+
+.header {
+    align-self: flex-start;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+    color: var(--turquoise);
+}
+
+.title {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.kainnos {
+    color: white;
+}
+
+.form {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(26, 188, 156, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease-in-out;
+    align-items: center;
+    justify-content: center;
+}
+
+.socialLogin {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonSocial {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.buttonSocial:hover {
+    transform: scale(1.03);
+}
+
+.divider {
+    text-align: center;
+    margin: 1rem 0;
+    color: var(--gray);
+}
+
+
+.submit {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--turquoise);
+    color: var(--dark-bg);
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit:hover {
+    background-color: #16a085;
+    transform: translateY(-2px);
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.forgotPassword,
+.register {
+    display: flex;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #00d1d1;
+    /* Azul turquesa */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.forgotPassword:hover,
+.register:hover {
+    color: #00ffff;
+    /* Azul más claro al pasar el mouse */
+    transform: translateY(-2px);
+    text-decoration: underline;
+}
+
+/* ... (Tus estilos existentes) ... */
+
+.error {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.modalContent {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    position: relative;
+    max-width: 400px;
+    width: 90%;
+    animation: slideIn 0.3s ease-in-out;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--white);
+}
+
+.success {
+    border-left: 5px solid #1abc9c;
+}
+
+.errorModal {
+    border-left: 5px solid red;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .form {
+        padding: 1.5rem;
+    }
+
+    .header h1 {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,171 @@
+:root {
+    --dark-bg: #0e0e0e;
+    --card-bg: #1e1e1e;
+    --turquoise: #1abc9c;
+    --gray: #7f8c8d;
+    --white: #ecf0f1;
+    --light-gray: #2c3e50;
+    --black: #000;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--white);
+}
+
+.headerKainnos {
+    position: fixed;
+    /* Lo fija respecto a la ventana */
+    top: 10;
+    /* Arriba */
+    right: 0;
+    /* A la derecha */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 20px;
+    /* Puedes ajustar el padding */
+    background-color: var(--header-bg-color, transparent);
+    /* Si quieres un fondo para que no se vea transparente */
+    z-index: 1000;
+    /* Para que esté por encima de otros elementos */
+    width: auto;
+    /* O pon un ancho fijo si quieres */
+}
+
+
+.headerTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.kainnos {
+    color: var(--white);
+}
+
+.xp {
+    color: var(--turquoise);
+}
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem 0 1rem;
+}
+
+.centerContainer {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.meta {
+    display: flex;
+    gap: 0.5rem;
+    color: var(--gray);
+}
+
+.btn {
+    margin-top: 1rem;
+    background: var(--turquoise);
+    font-family: poppins, sans-serif;
+    color: var(--black);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #16a085;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.modal {
+    background: var(--card-bg);
+    border-radius: 1rem;
+    max-width: 500px;
+    width: 100%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.closeBtn {
+    background: transparent;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: var(--white);
+}
+
+.checklist {
+    margin: 1rem 0;
+}
+
+.checkItem {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+.checkItem input {
+    margin-right: 0.75rem;
+    margin-top: 4px;
+}
+
+.footer {
+    margin-top: auto;
+    display: flex;
+    gap: 1rem;
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal {
+        padding: 1rem;
+    }
+}
